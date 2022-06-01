@@ -10,11 +10,15 @@
   </head>
 
   <body>
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+
     <% content_for(:navbar) do %>
       <li><a href="/">Home</a></li>
-      <li><a href="something/else">Something Else</a></li>
-      <li><a href="etc">Etc.</a></li>
+      <li><a href="/albums">Albums</a></li>
+    <% end %>
 
     <%= yield %>
+
   </body>
 </html>

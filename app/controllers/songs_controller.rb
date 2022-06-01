@@ -43,7 +43,6 @@ class SongsController < ApplicationController
     redirect_to album_path(@song.album)
   end
 
-  
   private
   def song_params
     params.require(:song).permit(:name, :lyrics)
