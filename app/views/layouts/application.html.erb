@@ -10,15 +10,18 @@
   </head>
 
   <body>
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+    <%= render "layouts/navbar"%>
+    <section class = "container">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
 
-    <% content_for(:navbar) do %>
-      <li><a href="/">Home</a></li>
-      <li><a href="/albums">Albums</a></li>
-    <% end %>
+      <% content_for(:navbar) do %>
+        <li><a href="/">Home</a></li>
+        <li><a href="/albums">Albums</a></li>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </section>
 
   </body>
 </html>
