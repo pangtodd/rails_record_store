@@ -1,14 +1,14 @@
-class UserController < ApplicationController
-  
+class UsersController < ApplicationController
+ 
   def new
     @user = User.new
   end
-  
+
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:notice] = "welcome to our cult."
-      session[:user_id]= @user.id
+      flash[:notice]  = "welcome to our cult."
+      session[:user_id] = @user.id
       redirect_to "/"
     else
       flash[:alert] = "You screwed that up. Try again"
