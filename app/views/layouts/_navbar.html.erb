@@ -1,20 +1,27 @@
 
 <header>
-  <div class='container' >  
+  <div class='container' >
     <nav>
-      <ul>
-        <li><%= link_to "home", root_path%></li>
-        <li><%= link_to "add album", new_album_path%></li>
-      </ul>
+      <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="text-left">  
+          <div class="btn-group" role="group" aria-label="First group">
+            <a class="btn btn-primary" href="/" role="button">home</a>
+            <a class="btn btn-primary" href="/albums/new" role="button">add an album</a>
+          </div>
+        </div>
+        <div class="text-right">
+          <div class="btn-group" role="group2" aria-label="Second group">
+            <% if current_user %>
+              <a class= "btn btn-primary" href="/signout" role="button"><%= current_user.email %></a> 
+              <a class="btn btn-primary" href="/signout" role="button">sign out</a>
+            <% else %>
+              <a class="btn btn-primary" href="/signup" role="button">sign up</a>
+              <a class="btn btn-primary" href="/signin" role="button">sign in</a>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </nav>
   </div>
 </header>
 
-<nav class="navbar navbar-light bg-light">
-  <form class="container-fluid justify-content-start">
-    <a class="btn btn-outline-success me-2" href="" role="button">Main button</button>
-    <button class="btn btn-sm btn-outline-secondary" type="button">Smaller button</button>
-  </form>
-</nav>
-
-<a class="btn btn-primary" href="#" role="button">Link</a>
